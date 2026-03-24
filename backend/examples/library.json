@@ -1,0 +1,54 @@
+[
+  {
+    "id": "apollo11",
+    "title": "Apollo 11 Mission",
+    "description": "Historical mission summary with people, organizations, and dates.",
+    "text": "Apollo 11 was launched by NASA in 1969. Neil Armstrong and Buzz Aldrin landed on the Moon while Michael Collins remained in lunar orbit.",
+    "ground_truth": [
+      {
+        "id": "gt-1",
+        "subject": "Apollo 11",
+        "relation": "launched_by",
+        "object": "NASA",
+        "provenance_sentence": "Apollo 11 was launched by NASA in 1969.",
+        "provenance_char_start": 0,
+        "provenance_char_end": 39,
+        "confidence": 1.0,
+        "model_name": "ground_truth",
+        "raw_metadata": {}
+      },
+      {
+        "id": "gt-2",
+        "subject": "Neil Armstrong",
+        "relation": "landed_on",
+        "object": "Moon",
+        "provenance_sentence": "Neil Armstrong and Buzz Aldrin landed on the Moon while Michael Collins remained in lunar orbit.",
+        "provenance_char_start": 40,
+        "provenance_char_end": 132,
+        "confidence": 1.0,
+        "model_name": "ground_truth",
+        "raw_metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "ai_research",
+    "title": "AI Research Collaboration",
+    "description": "Synthetic example with institutions and project outcomes.",
+    "text": "Stanford University collaborated with OpenAI on a safety benchmark. The benchmark evaluated large language models in healthcare and law.",
+    "ground_truth": [
+      {
+        "id": "gt-1",
+        "subject": "Stanford University",
+        "relation": "collaborated_with",
+        "object": "OpenAI",
+        "provenance_sentence": "Stanford University collaborated with OpenAI on a safety benchmark.",
+        "provenance_char_start": 0,
+        "provenance_char_end": 65,
+        "confidence": 1.0,
+        "model_name": "ground_truth",
+        "raw_metadata": {}
+      }
+    ]
+  }
+]
