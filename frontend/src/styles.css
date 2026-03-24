@@ -1,0 +1,96 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #172033;
+  background: #f4f6f9;
+}
+
+body, html, #root {
+  margin: 0;
+  min-height: 100%;
+}
+
+header {
+  background: #1f2a44;
+  color: white;
+  padding: 0.75rem 1rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr 330px;
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.card {
+  background: white;
+  border: 1px solid #d7dbe2;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.left-panel textarea,
+.left-panel select,
+.left-panel input,
+.left-panel button {
+  font: inherit;
+}
+
+.center-panel {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.graph-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #d7dbe2;
+  padding: 0.25rem 0.35rem;
+  font-size: 0.85rem;
+}
+
+.muted {
+  color: #687385;
+  font-size: 0.9rem;
+}
+
+.warning {
+  color: #8a5a00;
+}
+
+.error {
+  color: #b20000;
+}
+
+.source-viewer {
+  margin-top: 0.75rem;
+  white-space: pre-wrap;
+  border: 1px dashed #c8ced7;
+  padding: 0.5rem;
+  min-height: 220px;
+}
+
+mark {
+  background: #fff3bf;
+}
