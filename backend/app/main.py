@@ -16,6 +16,7 @@ from models.luke_adapter import LukeAdapter
 from models.rebel_adapter import RebelAdapter
 from services.evaluation import compute_diff, compute_metrics
 from services.examples import get_example, list_examples
+from services.model_loading import configure_huggingface_environment
 from services.parsing import UnsupportedFileTypeError, parse_uploaded_file
 
 app = FastAPI(title='KG Arena API', version='0.1.0')
@@ -31,6 +32,7 @@ app.add_middleware(
 
 @app.on_event('startup')
 def startup_event() -> None:
+    configure_huggingface_environment()
     app.state.adapters = [LukeAdapter(), RebelAdapter(), KnowGLAdapter()]
 
 
