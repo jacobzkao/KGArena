@@ -57,6 +57,22 @@ docker compose up --build
 - Frontend: http://localhost:5173
 - Backend API docs: http://localhost:8000/docs
 
+
+### Model caching and cold-start behavior
+
+KG Arena now configures a shared Hugging Face cache directory (`HF_HOME`) and suppresses noisy symlink warnings.
+
+For Docker builds, backend image creation pre-downloads LUKE + REBEL weights, so the first API extraction request does not spend extra time downloading multi-GB model files.
+
+If you run on Windows outside Docker, you can further improve caching performance by enabling **Developer Mode** (symlink support) or running Python with administrator rights.
+
+You can also prefetch models manually:
+
+```bash
+cd backend
+python -m app.preload_models
+```
+
 ## Example library
 
 Examples are stored in `backend/examples/library.json`.

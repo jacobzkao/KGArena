@@ -8,6 +8,7 @@ from transformers import pipeline
 from app.schemas import Triple
 from models.base import BaseExtractor
 from services.heuristic_extraction import heuristic_triples
+from services.model_loading import LUKE_MODEL_ID
 from services.provenance import best_sentence_span
 
 
@@ -20,7 +21,7 @@ class LukeAdapter(BaseExtractor):
         try:
             self._ner = pipeline(
                 'token-classification',
-                model='studio-ousia/luke-large-finetuned-conll-2003',
+                model=LUKE_MODEL_ID,
                 aggregation_strategy='simple',
             )
         except Exception as exc:  # pragma: no cover - environment-dependent

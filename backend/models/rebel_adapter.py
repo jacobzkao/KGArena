@@ -9,6 +9,7 @@ from transformers import pipeline
 from app.schemas import Triple
 from models.base import BaseExtractor
 from services.heuristic_extraction import heuristic_triples
+from services.model_loading import REBEL_MODEL_ID
 from services.provenance import best_sentence_span
 
 
@@ -60,8 +61,8 @@ class RebelAdapter(BaseExtractor):
         try:
             self._generator = pipeline(
                 'text2text-generation',
-                model='Babelscape/rebel-large',
-                tokenizer='Babelscape/rebel-large',
+                model=REBEL_MODEL_ID,
+                tokenizer=REBEL_MODEL_ID,
             )
         except Exception as exc:  # pragma: no cover - depends on runtime env
             self._load_error = str(exc)
@@ -90,7 +91,7 @@ class RebelAdapter(BaseExtractor):
                     provenance_char_end=end,
                     confidence=0.75,
                     model_name=self.model_name,
-                    raw_metadata={'generator': 'Babelscape/rebel-large'},
+                    raw_metadata={'generator': REBEL_MODEL_ID},
                 )
             )
         return triples
